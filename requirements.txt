@@ -1,0 +1,7 @@
+Django==5.0.4
+asgiref==3.8.1
+python-dateutil==2.8.1
+six==1.16.0
+sqlparse==0.5.0
+django-quill-editor==0.1.40
+djangorestframework

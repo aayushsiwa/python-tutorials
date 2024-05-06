@@ -1,0 +1,26 @@
+{% extends 'main/base.html'%}
+{% block content %}
+{% load static %}
+
+
+<div class="container d-flex">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+        {% for tut in tutorials %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'main/img/' %}{{ tut.slug }}.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{tut.title}}</h5>
+                    <p class="card-text">{{tut.content.html|safe}}</p>
+                    <!-- <a href="{{tut.slug}}" class="card-link">Check here</a> -->
+                    <button type="button" class="btn btn-outline-primary" onclick="location.href='/{{tut.slug}}'">Check Here</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}
