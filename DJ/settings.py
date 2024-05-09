@@ -16,7 +16,7 @@ import os
 import whitenoise
 # from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 # DATABASES = {
 # 	"default": dj_database_url.parse(DATABASE_URL)
