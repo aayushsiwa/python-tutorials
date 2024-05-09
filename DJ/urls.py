@@ -21,6 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('main.urls')),
     path("admin/", admin.site.urls),
-    path('tinymce/', include('tinymce.urls')),
     # path('register',include('main.urls')),
 ]
