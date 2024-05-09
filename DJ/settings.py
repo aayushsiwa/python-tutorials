@@ -13,17 +13,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # DATABASES = {
 # 	"default": dj_database_url.parse(DATABASE_URL)
 # }
-
-
-
-DATABASES = {
-	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,7 +35,7 @@ SECRET_KEY = "django-insecure-(y+!z!(c&j=(@l*80pjbk#5__r7&*&yxz+)r3tbw*$#!4+h2$7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh",".onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", ".onrender.com"]
 
 
 # Application definition
@@ -117,7 +113,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-    }
+    },
+    "default": dj_database_url.parse(os.getenv("DATABASE_URL")),
 }
 
 
@@ -161,8 +158,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-STATIC_ROOT = BASE_DIR / "staticfiles"
