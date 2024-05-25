@@ -1,0 +1,64 @@
+{% extends 'main/base.html'%}
+{% block content %}
+{% load static %}
+<div class="d-flex">
+    <div class="container">
+        <div class="row   me-1 ms-1 mt-3 tut">
+            <div class="col-md-12 col-lg-8">
+                <section class="col">
+                    <h3 class="">{{tutorial.title}}</h3>
+                    <img src="{% static 'main/img/' %}{{ tutorial.slug }}.jpg" class="tut-img col-12" alt="..." loading="lazy">
+                    <p id="published">{{tutorial.published}}</p>
+                    <div id="tut-content">
+                        {{tutorial.content.html|safe}}
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <ul class="list-group gap-2">
+                    {% for tutorial in sidebar %}
+                    {% if forloop.counter0 == this_tut_index %}
+                    <li class="card disabled list-group-item active card-active">
+                        {{tutorial.title}}<br>(currently viewing)
+                    </li>
+                    {% else %}
+                    <li class="card list-group-item">
+                        <button type="button" class="btn" data-bs-toggle="collapse"
+                            onclick="toggleCollapse('{{forloop.counter}}')"
+                            data-bs-target="#collapseExample{{forloop.counter}}" aria-expanded="false"
+                            aria-controls="collapseExample{{forloop.counter}}">
+                            {{tutorial.title}}
+                        </button>
+                        <div class="collapse d-none" id="collapseExample{{forloop.counter}}">
+                            <div class="text-center">
+                                <p><a href="/{{tutorial.slug}}" class="btn btn-warning tut-btn">Go</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleCollapse(index) {
+        var collapseId = "collapseExample" + index;
+        var collapseElement = document.getElementById(collapseId);
+        var allCollapseElements = document.querySelectorAll('.collapse');
+        // Close all collapse elements except the one being toggled
+        allCollapseElements.forEach(function (element) {
+            if (element.id !== collapseId) {
+                element.classList.add('d-none');
+            }
+        });
+        // Toggle collapse element associated with the clicked button
+        if (collapseElement.classList.contains('d-none')) {
+            collapseElement.classList.remove('d-none');
+        } else {
+            collapseElement.classList.add('d-none');
+        }
+    }
+</script>
+{% endblock %}

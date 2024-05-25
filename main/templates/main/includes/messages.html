@@ -1,0 +1,43 @@
+<!-- <div class="toast show " id="notice">
+    <div class="toast-body">
+        hi
+    </div>
+</div> -->
+{% if messages %}
+{% for message in messages %}
+<div class="toast align-items-center position-fixed top-2 end-0 m-3" role="alert" aria-live="assertive" aria-atomic="true" id="notice">
+    <div class="d-flex">
+        <div class="toast-body text-white">
+            {{message}}
+            {% if message.tags == 'success'%}
+            <script>
+                var myAlert = document.getElementById('notice');
+                myAlert.classList.add("bg-success");
+            </script>
+            {% elif message.tags == 'info'%}
+            <script>
+                var myAlert = document.getElementById('notice');
+                myAlert.classList.add("bg-primary");
+            </script>
+            {% elif message.tags == 'warning'%}
+            <script>
+                var myAlert = document.getElementById('notice');
+                myAlert.classList.add("bg-warning");
+            </script>
+            {% elif message.tags == 'error'%}
+            <script>
+                var myAlert = document.getElementById('notice');
+                myAlert.classList.add("bg-danger");
+            </script>
+            {% endif %}
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+<script>
+    var myAlert = document.getElementById('notice');//select id of toast
+    var bsAlert = new bootstrap.Toast(myAlert);//inizialize it
+    bsAlert.show()
+</script>

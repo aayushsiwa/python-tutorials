@@ -1,0 +1,72 @@
+* {
+    /* background-color: black; */
+    /* color: white; */
+}
+
+.ql-syntax {
+    background-color: grey;
+    color: azure;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.hljs-function {
+    /* color: orange; */
+    background-color: grey;
+}
+
+.hljs-keyword {
+    color: orange;
+    background-color: grey;
+}
+
+.hljs-params {
+    color: rgb(37, 37, 37);
+    background-color: grey;
+}
+
+.hljs-title {
+    background-color: grey;
+}
+
+.hljs-string {
+    color: lightgreen;
+    background-color: grey;
+}
+
+.card {
+    /* background-color: #f0f0f0; */
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.tut {}
+
+#tut-content img {
+    max-width: 100%;
+}
+
+.tut-img {
+    /* height: 50vh; */
+    /* width: 75vw; */
+    /* overflow: hidden; */
+
+}
+
+.tut-btn {
+    width: 100%;
+}
+
+.card-active {}
+
+
+#published {
+    color: rgba(0, 0, 0, 0.333);
+    font-weight: 600;
+}
