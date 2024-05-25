@@ -4,7 +4,7 @@ Python Tutorials
 
 ## Description
 
-This is a Django web application that allows users to browse python tutorials categorized into various series. Users can register, log in, and manage their accounts. The project is connected to a PostgreSQL database hosted on [render](Render.com).
+This is a Django web application that allows users to browse python tutorials categorized into various series. Users can register, log in, and manage their accounts. The project is connected to a PostgreSQL database hosted on [Render](Render.com).
 
 ## Features
 
