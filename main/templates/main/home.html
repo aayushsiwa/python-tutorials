@@ -8,7 +8,7 @@
         {% for tut in tutorials %}
         <div class="col">
             <div class="card h-100">
-                <img src="{% static 'main/img/' %}{{ tut.slug }}.jpg" class="card-img-top" alt="...">
+                <img src="{% static 'main/img/' %}{{ tut.slug }}.jpg" class="card-img-top" alt="..." loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title">{{tut.title}}</h5>
                     <p class="card-text">{{tut.content.html|safe}}</p>

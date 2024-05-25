@@ -8,7 +8,7 @@
     <div class="col">
         <a href="{{cat.slug}}" class="card-link"  id="card-link" style="text-decoration: none;">
             <div class="card h-100">
-                <img src="{% static 'main/img/' %}{{ cat.slug }}.jpg" class="card-img-top" alt="...">
+                <img src="{% static 'main/img/' %}{{ cat.slug }}.jpg" class="card-img-top" alt="..." loading="lazy">
                 <div class="card-body">
                     <h5 class="card-title">{{cat.category}}</h5>
                     <p class="card-text">{{cat.summary}}</p>

@@ -14,9 +14,9 @@ from pathlib import Path
 import dj_database_url
 import os
 import whitenoise
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 # DATABASES = {
 # 	"default": dj_database_url.parse(DATABASE_URL)
@@ -34,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-(y+!z!(c&j=(@l*80pjbk#5__r7&*&yxz+)r3tbw*$#!4+h2$7"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh", ".onrender.com"]
 
@@ -117,7 +117,7 @@ DATABASES = {
     #     "ENGINE": "django.db.backends.sqlite3",
     #     "NAME": BASE_DIR / "db.sqlite3",
     # },
-    "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    "default": dj_database_url.parse(os.getenv("DATABASE_URL")),
 }
 
 

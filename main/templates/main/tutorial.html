@@ -7,7 +7,7 @@
             <div class="col-md-12 col-lg-8">
                 <section class="col">
                     <h3 class="">{{tutorial.title}}</h3>
-                    <img src="{% static 'main/img/' %}{{ tutorial.slug }}.jpg" class="tut-img col-12" alt="...">
+                    <img src="{% static 'main/img/' %}{{ tutorial.slug }}.jpg" class="tut-img col-12" alt="..." loading="lazy">
                     <p id="published">{{tutorial.published}}</p>
                     <div id="tut-content">
                         {{tutorial.content.html|safe}}
