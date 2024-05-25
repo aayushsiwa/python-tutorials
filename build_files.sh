@@ -27,4 +27,4 @@ python3 manage.py whitenoise
 echo "Collect static..."
 python3 manage.py collectstatic --noinput --clear
 
-echo "Build process completed!"```
+echo "Build process completed!"
