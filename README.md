@@ -130,3 +130,5 @@ For any questions or feedback, please reach out to [me](aditya.sen1hl@gmail.com)
 ---
 
 Feel free to customize the above template according to your project's specific details and requirements.
+
+<img src="./screenshot.png">
