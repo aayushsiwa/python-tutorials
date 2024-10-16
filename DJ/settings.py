@@ -64,6 +64,19 @@ QUILL_CONFIGS = {
     }
 }
 
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "height": 500,
+    "width": 800,
+    "menubar": True,
+    "plugins": "advlist,autolink,lists,link,image,charmap,print,preview,anchor,"
+    "searchreplace,visualblocks,code,codesample,fullscreen,insertdatetime,media,table,paste,emoticons,"
+    "code,help,wordcount",
+    "toolbar": "undo redo | code | "
+    "bold italic backcolor | alignleft aligncenter "
+    "alignright alignjustify | bullist numlist outdent indent codesample emoticons| "
+    "removeformat",
+}
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -74,7 +87,8 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "main.apps.MainConfig",
-    "django_quill",
+    # "django_quill",
+    "tinymce",
 ]
 
 MIDDLEWARE = [
@@ -159,11 +173,11 @@ STATICFILES_DIRS = [
     # ...
 ]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "static"
 
-MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 
 # Default primary key field type

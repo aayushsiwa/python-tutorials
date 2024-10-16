@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
-from django_quill.fields import QuillField
+# from django_quill.fields import QuillField
+from tinymce.widgets import TinyMCE
+from tinymce import models as tinymce_models
 # from tinymce.models import HTMLField
 
 
@@ -38,7 +40,8 @@ class TutorialSeries(models.Model):
 
 class Tutorial(models.Model):
     title = models.CharField(max_length=200)
-    content = QuillField()
+    # content = QuillField()
+    content = tinymce_models.HTMLField()
     published = models.DateTimeField("date published", default=timezone.now())
     # series = models.ForeignKey(
     #     TutorialSeries, default=1, verbose_name="Series", on_delete=models.SET_DEFAULT
